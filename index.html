@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 11348 | Future Innovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
         /* Base styles */
         :root {
-            --primary: #00f5ff;
-            --primary-dark: #00a8cc;
-            --secondary: #9d4edd;
-            --accent: #ff006e;
+            --primary: #0033A0; /* Blue */
+            --primary-dark: #00257A;
+            --secondary: #FFD700; /* Gold */
+            --accent: #B8860B;
             --dark: #0a0a0f;
             --darker: #050508;
             --light: #e2f1ff;
             --gray: #8a8fa3;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --glow: 0 0 10px rgba(0, 245, 255, 0.7), 0 0 20px rgba(0, 245, 255, 0.5), 0 0 30px rgba(0, 245, 255, 0.3);
         }
         
         * {
@@ -76,7 +73,6 @@
             z-index: 1;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: var(--glow);
         }
         
         .btn::before {
@@ -97,14 +93,12 @@
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 245, 255, 0.4);
         }
         
         .btn-secondary {
             background: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
-            box-shadow: none;
         }
         
         .btn-secondary:hover {
@@ -129,7 +123,6 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
             position: relative;
             display: inline-block;
         }
@@ -160,7 +153,7 @@
             z-index: 1000;
             background: rgba(10, 10, 15, 0.8);
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 51, 160, 0.1);
             transition: var(--transition);
         }
         
@@ -178,7 +171,6 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            text-shadow: var(--glow);
         }
         
         .logo span {
@@ -217,11 +209,43 @@
             height: 2px;
             background: var(--primary);
             transition: var(--transition);
-            box-shadow: 0 0 8px var(--primary);
         }
         
         .nav-links a:hover::after {
             width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(10, 10, 15, 0.95);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 51, 160, 0.2);
+        }
+        
+        .dropdown-content a {
+            color: var(--light);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(0, 51, 160, 0.2);
+            color: var(--primary);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
         
         .mobile-menu {
@@ -239,15 +263,9 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-        }
-        
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
+            background: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.9)), url('team-bg.jpg');
+            background-size: cover;
+            background-position: center;
         }
         
         .hero-content {
@@ -270,7 +288,6 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
         }
         
         .hero-text p {
@@ -291,13 +308,10 @@
             position: relative;
         }
         
-        #three-container {
-            width: 100%;
-            height: 500px;
+        .hero-image img {
+            max-width: 100%;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--glow);
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         /* Features Section */
@@ -316,7 +330,7 @@
             background: rgba(20, 20, 30, 0.6);
             padding: 3rem 2.5rem;
             border-radius: 15px;
-            border: 1px solid rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 51, 160, 0.1);
             transition: var(--transition);
             text-align: center;
             position: relative;
@@ -336,8 +350,8 @@
         
         .feature-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), var(--glow);
-            border-color: rgba(0, 245, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 51, 160, 0.3);
         }
         
         .feature-icon {
@@ -351,7 +365,6 @@
             margin: 0 auto 1.5rem;
             color: var(--dark);
             font-size: 2rem;
-            box-shadow: var(--glow);
             transition: var(--transition);
         }
         
@@ -382,14 +395,14 @@
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
-            border: 1px solid rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 51, 160, 0.1);
             backdrop-filter: blur(10px);
         }
         
         .team-member:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 245, 255, 0.2);
-            border-color: rgba(0, 245, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 51, 160, 0.3);
         }
         
         .member-img {
@@ -438,7 +451,7 @@
         
         /* CTA Section */
         .cta {
-            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(157, 78, 221, 0.1));
+            background: linear-gradient(135deg, rgba(0, 51, 160, 0.1), rgba(255, 215, 0, 0.1));
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -451,7 +464,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%2300f5ff" opacity="0.03"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%230033A0" opacity="0.03"/></svg>');
             background-size: cover;
         }
         
@@ -500,7 +513,6 @@
             width: 40px;
             height: 3px;
             background: var(--primary);
-            box-shadow: 0 0 8px var(--primary);
         }
         
         .footer-links {
@@ -535,68 +547,25 @@
             justify-content: center;
             width: 45px;
             height: 45px;
-            background: rgba(0, 245, 255, 0.1);
+            background: rgba(0, 51, 160, 0.1);
             border-radius: 50%;
             color: var(--primary);
             transition: var(--transition);
-            border: 1px solid rgba(0, 245, 255, 0.2);
+            border: 1px solid rgba(0, 51, 160, 0.2);
         }
         
         .social-links a:hover {
             background: var(--primary);
             color: var(--dark);
             transform: translateY(-5px);
-            box-shadow: var(--glow);
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(0, 245, 255, 0.1);
+            border-top: 1px solid rgba(0, 51, 160, 0.1);
             color: var(--gray);
             font-size: 0.9rem;
-        }
-        
-        /* 3D Cube Animation */
-        .cube-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            perspective: 800px;
-        }
-        
-        .cube {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotate 15s infinite linear;
-        }
-        
-        .cube-face {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(0, 245, 255, 0.1);
-            border: 1px solid rgba(0, 245, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary);
-            box-shadow: inset 0 0 20px rgba(0, 245, 255, 0.2);
-        }
-        
-        .cube-face.front { transform: translateZ(100px); }
-        .cube-face.back { transform: translateZ(-100px) rotateY(180deg); }
-        .cube-face.right { transform: translateX(100px) rotateY(90deg); }
-        .cube-face.left { transform: translateX(-100px) rotateY(-90deg); }
-        .cube-face.top { transform: translateY(-100px) rotateX(90deg); }
-        .cube-face.bottom { transform: translateY(100px) rotateX(-90deg); }
-        
-        @keyframes rotate {
-            0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
-            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
         }
         
         /* Responsive Styles */
@@ -630,7 +599,7 @@
                 flex-direction: column;
                 padding: 2rem;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-                border-top: 1px solid rgba(0, 245, 255, 0.1);
+                border-top: 1px solid rgba(0, 51, 160, 0.1);
                 backdrop-filter: blur(15px);
             }
             
@@ -640,6 +609,13 @@
             
             .nav-links li {
                 margin: 1rem 0;
+            }
+            
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background: transparent;
+                border: none;
             }
             
             .mobile-menu {
@@ -678,23 +654,6 @@
                 width: 100%;
                 text-align: center;
             }
-            
-            .cube-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .cube-face {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .cube-face.front { transform: translateZ(75px); }
-            .cube-face.back { transform: translateZ(-75px) rotateY(180deg); }
-            .cube-face.right { transform: translateX(75px) rotateY(90deg); }
-            .cube-face.left { transform: translateX(-75px) rotateY(-90deg); }
-            .cube-face.top { transform: translateY(-75px) rotateX(90deg); }
-            .cube-face.bottom { transform: translateY(75px) rotateX(-90deg); }
         }
     </style>
 </head>
@@ -703,13 +662,42 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">TEAM<span>11348</span></a>
+                <a href="index.html" class="logo">TEAM<span>11348</span></a>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About Us</a>
+                            <a href="history.html">Our History</a>
+                            <a href="mission.html">Mission & Values</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Team <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="team.html">Meet the Team</a>
+                            <a href="mentors.html">Mentors</a>
+                            <a href="alumni.html">Alumni</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Robotics <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="robots.html">Our Robots</a>
+                            <a href="competitions.html">Competitions</a>
+                            <a href="awards.html">Awards</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="join.html">Join Us</a>
+                            <a href="sponsors.html">Sponsors</a>
+                            <a href="outreach.html">Outreach</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -720,19 +708,18 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>SHAPING THE FUTURE WITH INNOVATION</h1>
-                    <p>Team 11348 is pioneering next-generation technology solutions that push the boundaries of what's possible. We transform complex challenges into elegant solutions.</p>
+                    <h1>TEAM 11348: INNOVATORS OF TOMORROW</h1>
+                    <p>Welcome to FRC Team 11348, where we combine engineering excellence with creative problem-solving to compete in the FIRST Robotics Competition. Our team of dedicated students builds robots that push the boundaries of innovation.</p>
                     <div class="hero-btns">
-                        <a href="#contact" class="btn">Join The Revolution</a>
-                        <a href="#about" class="btn btn-secondary">Explore Our Work</a>
+                        <a href="join.html" class="btn">Join Our Team</a>
+                        <a href="robots.html" class="btn btn-secondary">See Our Robots</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div id="three-container"></div>
+                    <img src="team-photo.jpg" alt="Team 11348">
                 </div>
             </div>
         </div>
@@ -742,48 +729,30 @@
     <section class="features" id="about">
         <div class="container">
             <div class="section-header">
-                <h2>OUR CORE CAPABILITIES</h2>
-                <p>We combine cutting-edge technology with visionary thinking to deliver solutions that redefine industries.</p>
+                <h2>OUR CORE VALUES</h2>
+                <p>At Team 11348, we're committed to developing technical skills, fostering teamwork, and inspiring the next generation of innovators.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Advanced algorithms that learn, adapt, and optimize processes in real-time for unprecedented efficiency.</p>
+                    <h3>Engineering Excellence</h3>
+                    <p>We design and build competitive robots using cutting-edge technology and engineering principles.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-cube"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>3D Innovation</h3>
-                    <p>Immersive 3D modeling and visualization that brings ideas to life with stunning realism and interactivity.</p>
+                    <h3>Teamwork & Collaboration</h3>
+                    <p>Our diverse team works together to solve complex challenges and achieve our common goals.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Quantum Computing</h3>
-                    <p>Harnessing quantum mechanics to solve complex problems millions of times faster than classical computers.</p>
-                </div>
-            </div>
-            
-            <!-- 3D Cube Animation -->
-            <div style="margin-top: 6rem;">
-                <div class="section-header">
-                    <h2>EXPLORE OUR DIMENSIONS</h2>
-                    <p>Experience our multi-faceted approach to innovation through interactive 3D elements.</p>
-                </div>
-                <div class="cube-container">
-                    <div class="cube">
-                        <div class="cube-face front"><i class="fas fa-code"></i></div>
-                        <div class="cube-face back"><i class="fas fa-cogs"></i></div>
-                        <div class="cube-face right"><i class="fas fa-brain"></i></div>
-                        <div class="cube-face left"><i class="fas fa-rocket"></i></div>
-                        <div class="cube-face top"><i class="fas fa-atom"></i></div>
-                        <div class="cube-face bottom"><i class="fas fa-infinity"></i></div>
-                    </div>
+                    <h3>STEM Education</h3>
+                    <p>We're passionate about promoting science, technology, engineering, and math in our community.</p>
                 </div>
             </div>
         </div>
@@ -793,48 +762,48 @@
     <section class="team" id="team">
         <div class="container">
             <div class="section-header">
-                <h2>MEET THE VISIONARIES</h2>
-                <p>The brilliant minds driving innovation and pushing the boundaries of technology at Team 11348.</p>
+                <h2>MEET OUR LEADERSHIP</h2>
+                <p>Our dedicated student leaders and mentors guide Team 11348 to success both on and off the competition field.</p>
             </div>
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-img">
-                        <i class="fas fa-user-astronaut"></i>
+                        <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <h3>DR. ALEX RIVERA</h3>
-                        <p>Chief Innovation Officer</p>
-                        <p>Quantum computing specialist with 20+ patents in advanced computational systems.</p>
+                        <h3>JANE DOE</h3>
+                        <p>Team Captain</p>
+                        <p>Leads our team with vision and dedication, ensuring all members work together effectively.</p>
                     </div>
                 </div>
                 <div class="team-member">
                     <div class="member-img">
-                        <i class="fas fa-user-ninja"></i>
+                        <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <h3>KAITLYN ZHANG</h3>
-                        <p>Head of AI Research</p>
-                        <p>Neural network architect pioneering ethical AI systems with human-like reasoning.</p>
+                        <h3>JOHN SMITH</h3>
+                        <p>Technical Lead</p>
+                        <p>Oversees all technical aspects of robot design, fabrication, and programming.</p>
                     </div>
                 </div>
                 <div class="team-member">
                     <div class="member-img">
-                        <i class="fas fa-user-secret"></i>
+                        <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <h3>MARCUS THORNE</h3>
-                        <p>Cybernetics Director</p>
-                        <p>Human-machine interface expert bridging biological and digital intelligence.</p>
+                        <h3>SARAH JOHNSON</h3>
+                        <p>Outreach Coordinator</p>
+                        <p>Organizes community events and promotes STEM education in local schools.</p>
                     </div>
                 </div>
                 <div class="team-member">
                     <div class="member-img">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <h3>DR. ISABELLA MOREAU</h3>
-                        <p>Quantum Architect</p>
-                        <p>Theoretical physicist developing next-generation quantum processing units.</p>
+                        <h3>MR. DAVIS</h3>
+                        <p>Lead Mentor</p>
+                        <p>Provides guidance and support to help students develop their technical and leadership skills.</p>
                     </div>
                 </div>
             </div>
@@ -844,9 +813,9 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>READY TO TRANSFORM REALITY?</h2>
-            <p>Join forces with Team 11348 and become part of the technological revolution that's shaping our future.</p>
-            <a href="#contact" class="btn">Initiate Connection</a>
+            <h2>READY TO JOIN OUR TEAM?</h2>
+            <p>Whether you're a student interested in robotics, a potential mentor, or a sponsor looking to support STEM education, we'd love to hear from you.</p>
+            <a href="contact.html" class="btn">Get In Touch</a>
         </div>
     </section>
 
@@ -856,45 +825,45 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>TEAM 11348</h3>
-                    <p>Pioneering the future through cutting-edge innovation and revolutionary technology solutions.</p>
+                    <p>FRC Team 11348: Building the next generation of innovators through competitive robotics.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>NAVIGATION</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="robots.html">Our Robots</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>SERVICES</h3>
+                    <h3>RESOURCES</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Quantum Computing</a></li>
-                        <li><a href="#">AI Solutions</a></li>
-                        <li><a href="#">3D Innovation</a></li>
-                        <li><a href="#">Cybernetics</a></li>
-                        <li><a href="#">Future Tech</a></li>
+                        <li><a href="#">FIRST Robotics</a></li>
+                        <li><a href="#">Competition Schedule</a></li>
+                        <li><a href="#">Team Handbook</a></li>
+                        <li><a href="#">Sponsor Information</a></li>
+                        <li><a href="#">Media Gallery</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>CONTACT</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 11348 Innovation Drive, Tech City</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 141-8141</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 11348 Robotics Lane, Tech City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 113-4848</li>
                         <li><i class="fas fa-envelope"></i> contact@team11348.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 TEAM 11348. All rights reserved. | Shaping Tomorrow, Today</p>
+                <p>&copy; 2023 FRC TEAM 11348. All rights reserved. | Part of the FIRST Robotics Competition</p>
             </div>
         </div>
     </footer>
@@ -923,95 +892,6 @@
                 header.style.background = 'rgba(10, 10, 15, 0.8)';
             }
         });
-
-        // Initialize particles.js
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#00f5ff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#00a8cc",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
-                }
-            }
-        });
-
-        // Three.js 3D scene
-        function initThreeJS() {
-            const container = document.getElementById('three-container');
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(renderer.domElement);
-            
-            // Add lights
-            const ambientLight = new THREE.AmbientLight(0x00a8cc, 0.5);
-            scene.add(ambientLight);
-            
-            const directionalLight = new THREE.DirectionalLight(0x9d4edd, 0.8);
-            directionalLight.position.set(5, 5, 5);
-            scene.add(directionalLight);
-            
-            // Create a complex geometry
-            const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-            const material = new THREE.MeshPhongMaterial({ 
-                color: 0x00f5ff,
-                shininess: 100,
-                transparent: true,
-                opacity: 0.9
-            });
-            const torusKnot = new THREE.Mesh(geometry, material);
-            scene.add(torusKnot);
-            
-            camera.position.z = 30;
-            
-            // Animation
-            function animate() {
-                requestAnimationFrame(animate);
-                
-                torusKnot.rotation.x += 0.01;
-                torusKnot.rotation.y += 0.01;
-                
-                renderer.render(scene, camera);
-            }
-            
-            animate();
-            
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            });
-        }
-        
-        // Initialize Three.js when the page loads
-        window.addEventListener('load', initThreeJS);
     </script>
 </body>
 </html>
