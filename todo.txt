@@ -3,8 +3,5 @@ team name
 team logo
 Put in real visionaries and info
 Attach real socials
-Separate pages properly
-make a work in progress error page
-make contact page
-make join us page
 make the buttons line up properly to each site
+connect error page
