@@ -4,3 +4,11 @@ team logo
 resembles team 1325
 separate landing page
 dropdown menu for tabs
+
+Their notes:
+get rid of the animation on the landing page
+Switch to the team colors of blue and gold
+Get rid of the after glow
+Put in real visionaries and info
+Attach real socials
+Separate pages properly
