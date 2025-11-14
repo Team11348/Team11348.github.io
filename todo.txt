@@ -5,3 +5,10 @@ Put in real visionaries and info
 Attach real socials
 make the buttons line up properly to each site
 connect error page
+
+remove view all mentors buttons
+change team members in team.html
+
+update footers for every page
+
+update all proper contact information
