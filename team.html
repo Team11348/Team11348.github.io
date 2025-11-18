@@ -742,48 +742,93 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="modern-footer">
+        <div class="footer-waves">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="var(--primary)" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,90.7C384,96,480,96,576,85.3C672,75,768,53,864,48C960,43,1056,53,1152,64C1248,75,1344,85,1392,90.7L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>TEAM 11348</h3>
-                    <p>FRC Team 11348: Building the next generation of innovators through competitive robotics.</p>
-                        <a href="https://www.instagram.com/frc11348"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="icon.png" alt="Team 11348 Logo" class="footer-logo-img">
+                        <span class="logo-text">TEAM <span class="highlight">11348</span></span>
+                    </div>
+                    <p class="footer-description">Empowering the next generation of innovators through competitive robotics and STEM education.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frc11348" class="social-link" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/Team-11348" class="social-link" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <!--
+                        <a href="https://www.youtube.com/" class="social-link" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        
+                        <a href="https://twitter.com/" class="social-link" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        -->
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>NAVIGATION</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="about.html#robots">Our Robots</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>RESOURCES</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://www.firstinspires.org/robotics/frc" target="_blank">FIRST Robotics</a></li>
-                        <li><a href="https://www.firstinspires.org/robotics/frc/calendar" target="_blank">Competition Schedule</a></li>
-                        <li><a href="about.html#history">Team History</a></li>
-                        <li><a href="contact.html#sponsors">Sponsor Information</a></li>
-                        <li><a href="about.html#gallery">Media Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>CONTACT</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 70 Mineola Rd E, Mississauga, ON</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Port Credit Secondary School</li>
-                        <li><i class="fas fa-phone"></i> +1 (905) 278-3382</li>
-                        <li><i class="fas fa-envelope"></i> Beaconbots@team11348.com</li>
-                    </ul>
+
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul class="footer-nav">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="team.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                            <li><a href="about.html#robots"><i class="fas fa-chevron-right"></i> Our Robots</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Resources</h3>
+                        <ul class="footer-nav">
+                            <li><a href="https://www.firstinspires.org/robotics/frc" target="_blank"><i class="fas fa-external-link-alt"></i> FIRST Robotics</a></li>
+                            <li><a href="https://www.firstinspires.org/robotics/frc/calendar" target="_blank"><i class="fas fa-calendar-alt"></i> Competition Schedule</a></li>
+                            <li><a href="about.html#history"><i class="fas fa-history"></i> Team History</a></li>
+                            <li><a href="contact.html#sponsors"><i class="fas fa-hand-holding-heart"></i> Sponsor Us</a></li>
+                            <li><a href="about.html#gallery"><i class="fas fa-images"></i> Media Gallery</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Contact Us</h3>
+                        <ul class="contact-info">
+                            <li class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div>
+                                    <p>70 Mineola Rd E, Mississauga, ON</p>
+                                    <p class="contact-sub">Port Credit Secondary School</p>
+                                </div>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <a href="tel:+19052783382">+1 (905) 278-3382</a>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <a href="mailto:beaconbots@team11348.com">beaconbots@team11348.com</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2023 FRC TEAM 11348. All rights reserved. | Part of the FIRST Robotics Competition</p>
+                <div class="footer-legal">
+                    <p>&copy; 2025 FRC Team 11348 - BeaconBots. All rights reserved.</p>
+                    <p class="first-disclaimer">FIRST&reg; and other associated marks and logos are owned by FIRST (For Inspiration and Recognition of Science and Technology), a 501(c)(3) organization.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Made with <i class="fas fa-heart"></i> by Team 11348</p>
+                </div>
             </div>
         </div>
     </footer>
