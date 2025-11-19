@@ -7,7 +7,5 @@ create a previous robots page
 create a view sponsors and become page
 
 remove view all mentors buttons
-change team members in team.html
 
 remove forms or make them work
-fix the font settings for the join team page
