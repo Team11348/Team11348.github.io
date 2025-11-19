@@ -1,9 +1,2 @@
 
-Put in real visionaries and info
-Attach real socials
-make the buttons line up properly to each site
-connect error page
-create a previous robots page
-create a view sponsors and become page
-
 remove forms or make them work
