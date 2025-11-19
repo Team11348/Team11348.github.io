@@ -991,11 +991,62 @@
             }
         });
 
-        // Contact form handling
+        // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value || 'Not provided';
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Map subject values to readable text
+            const subjectMap = {
+                'join': 'Joining the Team',
+                'sponsor': 'Sponsorship',
+                'volunteer': 'Volunteering',
+                'collaboration': 'Collaboration',
+                'general': 'General Inquiry',
+                'other': 'Other'
+            };
+            
+            const subjectText = subjectMap[subject] || subject;
+            
+            // Create email content
+            const emailSubject = encodeURIComponent(`${subjectText} - ${firstName} ${lastName}`);
+            const emailBody = encodeURIComponent(`Dear Team 11348,
+
+${subjectText === 'General Inquiry' ? 'I have a question about your team.' : `I am reaching out regarding ${subjectText.toLowerCase()}.`}
+
+Here are my details:
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+
+My message:
+${message}
+
+I look forward to hearing from you soon.
+
+Best regards,
+${firstName} ${lastName}
+
+---
+IMPORTANT: This email will be sent to beaconbots@team11348.com (Team 11348 - BeaconBots)
+Please review your message above and click "Send" to contact the team.
+This message was submitted via the Team 11348 website on ${new Date().toLocaleDateString()}.`);
+            
+            // Create mailto link that opens in user's email client
+            const mailtoLink = `mailto:beaconbots@team11348.com?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Perfect! Your email client has opened with your message ready to send to Team 11348. Please review your message and click "Send" to contact beaconbots@team11348.com!');
         });
     </script>
 </body>

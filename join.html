@@ -1267,8 +1267,68 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Join form submission
+        document.getElementById('joinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value || 'Not provided';
+            const school = document.getElementById('school').value;
+            const grade = document.getElementById('grade').value;
+            const interests = document.getElementById('interests').value;
+            const experience = document.getElementById('experience').value || 'None provided';
+            const whyJoin = document.getElementById('whyJoin').value;
+            
+            // Get availability
+            const availability = [];
+            if (document.getElementById('monday').checked) availability.push('Monday (3:00 PM - 6:00 PM)');
+            if (document.getElementById('wednesday').checked) availability.push('Wednesday (3:00 PM - 6:00 PM)');
+            if (document.getElementById('saturday').checked) availability.push('Saturday (9:00 AM - 2:00 PM)');
+            
+            // Create email content
+            const subject = encodeURIComponent(`Team 11348 Application - ${firstName} ${lastName}`);
+            const body = encodeURIComponent(`Dear Team 11348,
+
+I would like to apply to join FRC Team 11348 - BeaconBots. Here are my details:
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+School: ${school}
+Grade: ${grade}th Grade
+Primary Interests: ${interests}
+Previous Experience: ${experience}
+Why I want to join: ${whyJoin}
+Availability: ${availability.length > 0 ? availability.join(', ') : 'Not specified'}
+
+I have parental/guardian permission to join the team and am excited about the opportunity to be part of Team 11348. Please let me know the next steps in the application process.
+
+Thank you!
+${firstName} ${lastName}
+
+---
+IMPORTANT: This email will be sent to beaconbots@team11348.com (Team 11348 - BeaconBots)
+Please review your information above and click "Send" to submit your application to the team.
+This application was submitted via the Team 11348 website on ${new Date().toLocaleDateString()}.`);
+            
+            // Create mailto link that opens in user's email client with their email
+            const mailtoLink = `mailto:beaconbots@team11348.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Perfect! Your email client has opened with your application ready to send to Team 11348. Please review your information and click "Send" to submit your application to beaconbots@team11348.com!');
         });
 
         // Close mobile menu when clicking on a link
