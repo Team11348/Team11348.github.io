@@ -9,7 +9,5 @@ create a view sponsors and become page
 remove view all mentors buttons
 change team members in team.html
 
-update footers for every page
-update the favicon icon
 remove forms or make them work
 fix the font settings for the join team page
