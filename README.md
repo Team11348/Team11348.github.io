@@ -160,6 +160,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **© 2025 FRC Team 11348 - BeaconBots. All rights reserved.**
 
 *Made with ❤️ by Team 11348*
+*Developed by Sarveshwar Senthil Kumar*
 
 ---
 
