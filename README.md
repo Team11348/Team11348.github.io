@@ -164,4 +164,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-*This website represents the hard work and dedication of all Team 11348 members, mentors, and volunteers who contribute to making STEM education accessible and exciting for students in our community.*
+*This website is currently deprecated. This website represents the hard work and dedication of all Team 11348 members, mentors, and volunteers who contribute to making STEM education accessible and exciting for students in our community.*
